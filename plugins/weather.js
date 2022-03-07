@@ -11,16 +11,22 @@ if (Config.WORKTYPE == 'private') {
     Bot.addCommand({pattern: 'weather ?(.*)', desc: Lang.WEATHER_DESC, fromMe: true}, async (message, match) => {
 
 	    if (match[1] === '') return await message.sendReply(Lang.NEED_LOCATION);
-	    const url = `http://api.openweathermap.org/data/2.5/weather?q=${match[1]}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=tr`;
+	    const url = `${Config.API}/weather?place=${match[1]}`;
 	    try {
 		    const response = await got(url);
 		    const json = JSON.parse(response.body);
 		    if (response.statusCode === 200) return await message.sendReply('*📍 ' + Lang.LOCATION +':* ```' + match[1] + '```\n\n' +
-		    '*☀ ' + Lang.TEMP +':* ```' + json.main.temp_max + '°```\n' + 
-		    '*ℹ ' + Lang.DESC +':* ```' + json.weather[0].description + '```\n' +
-		    '*☀ ' + Lang.HUMI +':* ```%' + json.main.humidity + '```\n' + 
-		    '*💨 ' + Lang.WIND +':* ```' + json.wind.speed + 'm/s```\n' + 
-		    '*☁ ' + Lang.CLOUD +':* ```%' + json.clouds.all + '```\n');
+		    '*☀️ ' + Lang.TEMP +':* ```' + json.result.max_temp + '°```\n' + 
+		    '*💬 ' + Lang.DESC +':* ```' + json.result.weather_desc + '```\n' +
+		    '*☀ ' + Lang.HUMI +':* ```%' + json.result.humidity + '```\n' + 
+		    '*💨 ' + Lang.WIND +':* ```' + json.result.wind_speed + 'm/s```\n' + 
+		    '*☁ ' + Lang.CLOUD +':* ```%' + json.result.clouds + '```\n' +
+                    '*♦️ ' + Lang.PRESSURE + ':* ```%' + json.result.pressure + '```\n' +
+                    '*📉 ' + Lang.LAT + ':* ```' + json.result.latitude + '```\n' +
+                    '*📈 ' + Lang.LON + ':* ```' + json.result.longitude + '```\n' +
+                    '*🌅 ' + Lang.SR + ':* ```' + json.result.sunrise + '```\n' +
+                    '*🌇 ' + Lang.SS + ':* ```' + json.result.sunset + '```\n' +
+                    '*⏱️ ' + Lang.TZ + ':* ```' + json.result.timezone + '```');
 	    } catch {
 		    return await message.sendReply(Lang.NOT_FOUND);
 	    }
@@ -31,16 +37,22 @@ if (Config.WORKTYPE == 'public') {
     Bot.addCommand({pattern: 'weather ?(.*)', desc: Lang.WEATHER_DESC, fromMe: false}, async (message, match) => {
 
 	    if (match[1] === '') return await message.sendReply(Lang.NEED_LOCATION);
-	    const url = `http://api.openweathermap.org/data/2.5/weather?q=${match[1]}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=tr`;
+	    const url = `${Config.API}/weather?place=${match[1]}`;
 	    try {
 		    const response = await got(url);
 		    const json = JSON.parse(response.body);
 		    if (response.statusCode === 200) return await message.sendReply('*📍 ' + Lang.LOCATION +':* ```' + match[1] + '```\n\n' +
-		    '*☀ ' + Lang.TEMP +':* ```' + json.main.temp_max + '°```\n' + 
-		    '*ℹ ' + Lang.DESC +':* ```' + json.weather[0].description + '```\n' +
-		    '*☀ ' + Lang.HUMI +':* ```%' + json.main.humidity + '```\n' + 
-		    '*💨 ' + Lang.WIND +':* ```' + json.wind.speed + 'm/s```\n' + 
-		    '*☁ ' + Lang.CLOUD +':* ```%' + json.clouds.all + '```\n');
+		    '*☀️ ' + Lang.TEMP +':* ```' + json.result.max_temp + '°```\n' + 
+		    '*💬 ' + Lang.DESC +':* ```' + json.result.weather_desc + '```\n' +
+		    '*☀ ' + Lang.HUMI +':* ```%' + json.result.humidity + '```\n' + 
+		    '*💨 ' + Lang.WIND +':* ```' + json.result.wind_speed + 'm/s```\n' + 
+		    '*☁ ' + Lang.CLOUD +':* ```%' + json.result.clouds + '```\n' +
+                    '*♦️ ' + Lang.PRESSURE + ':* ```%' + json.result.pressure + '```\n' +
+                    '*📉 ' + Lang.LAT + ':* ```' + json.result.latitude + '```\n' +
+                    '*📈 ' + Lang.LON + ':* ```' + json.result.longitude + '```\n' +
+                    '*🌅 ' + Lang.SR + ':* ```' + json.result.sunrise + '```\n' +
+                    '*🌇 ' + Lang.SS + ':* ```' + json.result.sunset + '```\n' +
+                    '*⏱️ ' + Lang.TZ + ':* ```' + json.result.timezone + '```');
 	    } catch {
 		    return await message.sendReply(Lang.NOT_FOUND);
 	    }
