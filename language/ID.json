@@ -74,7 +74,7 @@
             "NEED_BOTH": "*Anda harus memasukkan beberapa kata atau membalas pesan apa pun!*",
             "STAM_DESC": "Mengirim pesan yang dimasukkan atau pesan balasan ke semua anggota dalam grup.",
             "SUC_PMS": "*Pesan Berhasil Terkirim ✅*",
-            "MSG": "Pesan",
+            "MSG": "```Pesan```",
             "FRM": "Dari:"
         },
         "heroku": {
