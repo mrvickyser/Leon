@@ -143,11 +143,11 @@ ${chalk.blue.italic('Made By TOXIC-DEVIL')}`);
         );
         
          if (config.LANG == 'EN') {
-             await Leon.sendMessage(Leon.user.jid, decodeURIComponent("KvCfkbsgTEVPTiBJUyBOT1cgQUNUSVZFKg=="), MessageType.text);
+             await Leon.sendMessage(Leon.user.jid, atob("KvCfkbsgTEVPTiBJUyBOT1cgQUNUSVZFKg=="), MessageType.text);
          } else if (config.LANG == 'ID') {
-             await Leon.sendMessage(Leon.user.jid, decodeURIComponent("KvCfkbsgTGVvbiBzZWthcmFuZyBha3RpZio="), MessageType.text);             
+             await Leon.sendMessage(Leon.user.jid, atob("KvCfkbsgTGVvbiBzZWthcmFuZyBha3RpZio="), MessageType.text);             
          } else {
-             await Leon.sendMessage(Leon.user.jid, decodeURIComponent("KvCfkbsg4LSy4LS/4LSv4LWL4LW6IOC0h+C0quC1jeC0quC1i+C1viDgtLjgtJzgtYDgtLXgtK7gtL7gtKPgtY0q"), MessageType.text);
+             await Leon.sendMessage(Leon.user.jid, atob("KvCfkbsg4LSy4LS/4LSv4LWL4LW6IOC0h+C0quC1jeC0quC1i+C1viDgtLjgtJzgtYDgtLXgtK7gtL7gtKPgtY0q"), MessageType.text);
         }
     });
     
@@ -386,13 +386,13 @@ ${chalk.blue.italic('Made By TOXIC-DEVIL')}`);
                         }
                         catch (error) {
                             if (config.LANG == 'EN') {
-                                await Leon.sendMessage(Leon.user.jid, fs.readFileSync("./src/image/TOXIC-DEVIL.png"), MessageType.image, { mimetype: Mimetype.png, caption: '*『 ERROR 』*\n\n*WhatsAlexa an error has occurred!*\n_Report this error to the developer! [ TOXIC-DEVIL ]._\n\n*Error:* ```' + error + '```\n\n' });
+                                await Leon.sendMessage(Leon.user.jid, atob("XG4q44COIEVSUk9SIOOAjypcblxuKkxlb24gYW4gZXJyb3IgaGFzIG9jY3VycmVkISpcblxuKkVycm9yOiogYGBg") + error + '```\n\n', MessageType.text);
                                 
                             } else if (config.LANG == 'ML') {
-                                await Leon.sendMessage(Leon.user.jid, fs.readFileSync("./src/image/TOXIC-DEVIL.png"), MessageType.image, { mimetype: Mimetype.png, caption: '*『 പിശക് 』*\n\n*WhatsAlexa പിശക് സംഭവിച്ചു!*\n_ഈ പിശക് ഡെവലപ്പറെ അറിയിക്കുക! [ TOXIC-DEVIL ]._\n\n*പിശക്:* ```' + error + '```\n\n' });
+                                await Leon.sendMessage(Leon.user.jid, atob("KuOAjiDgtKrgtL/gtLbgtJXgtY0g44CPKlxuXG4qTGVvbiDgtKrgtL/gtLbgtJXgtY0g4LS44LSC4LSt4LS14LS/4LSa4LWN4LSa4LWBISpcblxuKuC0quC0v+C0tuC0leC1jToqIGBgYA==") + error '```\n\n', MessageType.text);
                                 
                             } else {
-                                await Leon.sendMessage(Leon.user.jid, fs.readFileSync("./src/image/TOXIC-DEVIL.png"), MessageType.image, { mimetype: Mimetype.png, caption: '*『 KESALAHAN 』*\n\n*WhatsAlexa telah terjadi kesalahan!*\n_Laporkan kesalahan ini ke pengembang [ TOXIC-DEVIL ]._\n\n*Kesalahan:* ```' + error + '```\n\n' });
+                                await Leon.sendMessage(Leon.user.jid, atob("KuOAjiBLRVNBTEFIQU4g44CPKlxuXG4qTGVvbiB0ZWxhaCB0ZXJqYWRpIGtlc2FsYWhhbiEqXG5cbipLZXNhbGFoYW46KiBgYGA=") + error + '```\n\n', MessageType.text);
                             }
                         }
                     }
