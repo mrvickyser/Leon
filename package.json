@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/TOXIC-DEVIL/Leon#readme",
   "dependencies": {
-    "@adiwajshing/baileys": "3.5.3",
+    "@adiwajshing/baileys": "3.4.1",
     "@lh2020/speedtest-net": "^2.1.1",
     "wa-sticker-formatter": "3.6.0",
     "browser-id3-writer": "^4.4.0",
