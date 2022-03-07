@@ -16,7 +16,7 @@ async function checkAdmin(message, user = message.client.user.jid) {
     return sonuc.includes(true);
 }
 
-Bot.addCommand({pattern: 'kick ?(.*)', fromMe: td, onlyGroup: true, desc: Lang.BAN_DESC}, (async (message, match) => {  
+Bot.addCommand({pattern: 'ban ?(.*)', fromMe: td, onlyGroup: true, desc: Lang.BAN_DESC}, (async (message, match) => {  
     var im = await checkAdmin(message);
     if (!im) return await message.sendReply(Lang.IAM_NOT_ADMIN);
 
@@ -184,7 +184,7 @@ Bot.addCommand({pattern: 'demote ?(.*)', fromMe: td, onlyGroup: true, desc: Lang
     }
 }));
 
-Bot.addCommand({pattern: 'closegc ?(.*)', fromMe: td, onlyGroup: true, desc: Lang.MUTE_DESC}, (async (message, match) => {    
+Bot.addCommand({pattern: 'mute ?(.*)', fromMe: td, onlyGroup: true, desc: Lang.MUTE_DESC}, (async (message, match) => {    
     var im = await checkAdmin(message);
     if (!im) return await message.sendReply(Lang.IAM_NOT_ADMIN);
 
@@ -192,7 +192,7 @@ Bot.addCommand({pattern: 'closegc ?(.*)', fromMe: td, onlyGroup: true, desc: Lan
     await message.sendReply(Lang.MUTED);
 }));
 
-Bot.addCommand({pattern: 'opengc ?(.*)', fromMe: td, onlyGroup: true, desc: Lang.UNMUTE_DESC}, (async (message, match) => {    
+Bot.addCommand({pattern: 'unmute ?(.*)', fromMe: td, onlyGroup: true, desc: Lang.UNMUTE_DESC}, (async (message, match) => {    
     var im = await checkAdmin(message);
     if (!im) return await message.sendReply(Lang.IAM_NOT_ADMIN);
 
