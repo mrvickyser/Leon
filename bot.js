@@ -389,7 +389,7 @@ ${chalk.blue.italic('Made By TOXIC-DEVIL')}`);
                                 await Leon.sendMessage(Leon.user.jid, atob("XG4q44COIEVSUk9SIOOAjypcblxuKkxlb24gYW4gZXJyb3IgaGFzIG9jY3VycmVkISpcblxuKkVycm9yOiogYGBg") + error + '```\n\n', MessageType.text);
                                 
                             } else if (config.LANG == 'ML') {
-                                await Leon.sendMessage(Leon.user.jid, atob("KuOAjiDgtKrgtL/gtLbgtJXgtY0g44CPKlxuXG4qTGVvbiDgtKrgtL/gtLbgtJXgtY0g4LS44LSC4LSt4LS14LS/4LSa4LWN4LSa4LWBISpcblxuKuC0quC0v+C0tuC0leC1jToqIGBgYA==") + error '```\n\n', MessageType.text);
+                                await Leon.sendMessage(Leon.user.jid, atob("KuOAjiDgtKrgtL/gtLbgtJXgtY0g44CPKlxuXG4qTGVvbiDgtKrgtL/gtLbgtJXgtY0g4LS44LSC4LSt4LS14LS/4LSa4LWN4LSa4LWBISpcblxuKuC0quC0v+C0tuC0leC1jToqIGBgYA==") + error + '```\n\n', MessageType.text);
                                 
                             } else {
                                 await Leon.sendMessage(Leon.user.jid, atob("KuOAjiBLRVNBTEFIQU4g44CPKlxuXG4qTGVvbiB0ZWxhaCB0ZXJqYWRpIGtlc2FsYWhhbiEqXG5cbipLZXNhbGFoYW46KiBgYGA=") + error + '```\n\n', MessageType.text);
