@@ -1,11 +1,12 @@
-function date(Language) {
-  if (!Language) return;
+const config = require('./config');
+
+async function date() {
   const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
-  var data = new Date().toLocaleDateString(Language, get_localized_date)
+  var data = new Date().toLocaleDateString(config.LANG, get_localized_date)
   return data;
 }
 
-function time(number) {
+async function time(number) {
   var data = ''
   if (number.startsWith('90')) { // Turkey
     data = new Date().toLocaleString('TR', { timeZone: 'Europe/Istanbul' }).split(' ')[1]
