@@ -1,4 +1,4 @@
-const config = require('./config');
+const config = require('../config');
 
 async function date() {
   const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
