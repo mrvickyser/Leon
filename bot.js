@@ -96,7 +96,7 @@ async function start() {
         }
     })    
 
-    Leon.on('Leonecting', async () => {
+    Leon.on('connecting', async () => {
         console.log(`${chalk.green.bold('WhatAlexa')}
 ${chalk.white.bold('Version:')} ${chalk.red.bold(config.VERSION)}
 ${chalk.blue.italic('Made By TOXIC-DEVIL')}`);
@@ -402,7 +402,7 @@ ${chalk.blue.italic('Made By TOXIC-DEVIL')}`);
     });
 
     try {
-        await Leon.Leonect();
+        await Leon.connect();
     } catch {
         if (!nodb) {
             console.log(chalk.red.bold('ERROR...'))
