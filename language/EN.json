@@ -231,13 +231,19 @@
         },
         "weather": {
             "WEATHER_DESC": "Shows the weather.",
-            "NEED_LOCATION": "* Please write a location!*\n*Example:* ```.weather Bakü```",
+            "NEED_LOCATION": "*Please write a location!*\n*Example:* ```.weather Kerala```",
             "LOCATION": "Location",
             "TEMP": "Temperature",
             "DESC": "Description",
             "HUMI": "Humidity",
             "WIND": "Wind Speed",
             "CLOUD": "Cloud",
+            "PRESSURE": "Pressure",
+            "LAT": "Latitude",
+            "LON": "Longitude",
+            "SR": "Sunrise",
+            "SS": "Sunset",
+            "TZ": "Timezone",
             "NOT_FOUND": "```I couldn't find a city with this name. 😖```"
         },
         "web": {
