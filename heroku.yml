@@ -1,0 +1,5 @@
+build:
+  docker:
+      worker: /leon/Dockerfile
+run:
+   worker: npm start
