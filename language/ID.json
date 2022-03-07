@@ -248,6 +248,12 @@
             "HUMI": "Kelembaban",
             "WIND": "Kecepatan angin",
             "CLOUD": "Awan",
+            "PRESSURE": "Tekanan",
+            "LAT": "Garis Lintang",
+            "LON": "Garis bujur",
+            "SR": "Matahari terbit",
+            "SS": "Matahari terbenam",
+            "TZ": "Zona waktu",
             "NOT_FOUND": "```Saya tidak bisa menemukan kota dengan nama ini. 😖```"
         },
         "web": {
