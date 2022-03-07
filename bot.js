@@ -18,7 +18,6 @@ const heroku = new Heroku({
 
 let baseURI = '/apps/' + config.HEROKU.APP_NAME;
 
-
 const LeonDB = config.DATABASE.define('Bot', {
     info: {
       type: DataTypes.STRING,
@@ -97,9 +96,11 @@ async function start() {
     })    
 
     Leon.on('connecting', async () => {
-        console.log(`${chalk.green.bold('WhatAlexa')}
-${chalk.white.bold('Version:')} ${chalk.red.bold(config.VERSION)}
-${chalk.blue.italic('Made By TOXIC-DEVIL')}`);
+        console.log(`${chalk.green.bold('👻 Leon')}
+${chalk.white.bold('💬 Version:')} ${chalk.red.bold(config.VERSION)}
+${chalk.blue.italic('👤 Made By TOXIC-DEVIL')}
+
+${chalk.green.bold("🔄 Connecting...")}`);
     });
     
 
@@ -141,13 +142,15 @@ ${chalk.blue.italic('Made By TOXIC-DEVIL')}`);
         console.log(
             chalk.green.bold('🎉 LEON IS NOW ACTIVE IN YOUR ACCOUNT!')
         );
-        
+       
+         var startMsg = { en: "%2A%F0%9F%91%BB%20LEON%20IS%20NOW%20ACTIVE%2A", ml: "%2A%F0%9F%91%BB%20%E0%B4%B2%E0%B4%BF%E0%B4%AF%E0%B5%8B%E0%B5%BA%20%E0%B4%87%E0%B4%AA%E0%B5%8D%E0%B4%AA%E0%B5%8B%E0%B5%BE%20%E0%B4%B8%E0%B4%9C%E0%B5%80%E0%B4%B5%E0%B4%AE%E0%B4%BE%E0%B4%A3%E0%B5%8D%2A", id: "%2A%F0%9F%91%BB%20Leon%20sekarang%20aktif%2A" }
+
          if (config.LANG == 'EN') {
-             await Leon.sendMessage(Leon.user.jid, atob("KvCfkbsgTEVPTiBJUyBOT1cgQUNUSVZFKg=="), MessageType.text);
+             await Leon.sendMessage(Leon.user.jid, decodeURI(startMsg.en), MessageType.text);
          } else if (config.LANG == 'ID') {
-             await Leon.sendMessage(Leon.user.jid, atob("KvCfkbsgTGVvbiBzZWthcmFuZyBha3RpZio="), MessageType.text);             
+             await Leon.sendMessage(Leon.user.jid, decodeURI(startMsg.id), MessageType.text);             
          } else {
-             await Leon.sendMessage(Leon.user.jid, atob("KvCfkbsg4LSy4LS/4LSv4LWL4LW6IOC0h+C0quC1jeC0quC1i+C1viDgtLjgtJzgtYDgtLXgtK7gtL7gtKPgtY0q"), MessageType.text);
+             await Leon.sendMessage(Leon.user.jid, decodeURI(startMsg.ml), MessageType.text);
         }
     });
     
@@ -385,14 +388,17 @@ ${chalk.blue.italic('Made By TOXIC-DEVIL')}`);
                             await command.function(whats, match);
                         }
                         catch (error) {
+
+                            var errorMsg = { en: "%0A%2A%E3%80%8E%20ERROR%20%E3%80%8F%2A%0A%0A%2ALeon%20an%20error%20has%20occurred%21%2A%0A%0A%2AError:%2A%20%60%60%60", ml: "%0A%2A%E3%80%8E%20%E0%B4%AA%E0%B4%BF%E0%B4%B6%E0%B4%95%E0%B5%8D%20%E3%80%8F%2A%0A%0A%2ALeon%20%E0%B4%AA%E0%B4%BF%E0%B4%B6%E0%B4%95%E0%B5%8D%20%E0%B4%B8%E0%B4%82%E0%B4%AD%E0%B4%B5%E0%B4%BF%E0%B4%9A%E0%B5%8D%E0%B4%9A%E0%B5%81%21%2A%0A%0A%2A%E0%B4%AA%E0%B4%BF%E0%B4%B6%E0%B4%95%E0%B5%8D%3A%2A%20%60%60%60%0A", id: "%0A%2A%E3%80%8E%20KESALAHAN%20%E3%80%8F%2A%0A%0A%2ALeon%20telah%20terjadi%20kesalahan%21%2A%0A%0A%2AKesalahan%3A%2A%20%60%60%60%0A" }
+
                             if (config.LANG == 'EN') {
-                                await Leon.sendMessage(Leon.user.jid, atob("XG4q44COIEVSUk9SIOOAjypcblxuKkxlb24gYW4gZXJyb3IgaGFzIG9jY3VycmVkISpcblxuKkVycm9yOiogYGBg") + error + '```\n\n', MessageType.text);
+                                await Leon.sendMessage(Leon.user.jid, decodeURI(errorMsg.en) + error + '```\n\n', MessageType.text);
                                 
                             } else if (config.LANG == 'ML') {
-                                await Leon.sendMessage(Leon.user.jid, atob("KuOAjiDgtKrgtL/gtLbgtJXgtY0g44CPKlxuXG4qTGVvbiDgtKrgtL/gtLbgtJXgtY0g4LS44LSC4LSt4LS14LS/4LSa4LWN4LSa4LWBISpcblxuKuC0quC0v+C0tuC0leC1jToqIGBgYA==") + error + '```\n\n', MessageType.text);
+                                await Leon.sendMessage(Leon.user.jid, decodeURI(errorMsg.ml) + error + '```\n\n', MessageType.text);
                                 
                             } else {
-                                await Leon.sendMessage(Leon.user.jid, atob("KuOAjiBLRVNBTEFIQU4g44CPKlxuXG4qTGVvbiB0ZWxhaCB0ZXJqYWRpIGtlc2FsYWhhbiEqXG5cbipLZXNhbGFoYW46KiBgYGA=") + error + '```\n\n', MessageType.text);
+                                await Leon.sendMessage(Leon.user.jid, decodeURI(errorMsg.id) + error + '```\n\n', MessageType.text);
                             }
                         }
                     }
