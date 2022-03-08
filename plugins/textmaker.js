@@ -13,7 +13,7 @@ const _0x4dd97e=_0x5f2b;(function(_0x231d20,_0x495e5b){const _0x3be458=_0x5f2b,_
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
     try {
-       var webimage = await axios.get(`https://xteam.xyz/textpro/helloweenfire?text=WhatsAlexa%20%20%20%20%20%20%20%20%20Made%20By%20Toxic%20Devil&APIKEY=${Config.XTEAM_API}`, { responseType: 'arraybuffer' })
+       var webimage = await axios.get(`https://xteam.xyz/textpro/helloweenfire?APIKEY=${Config.XTEAM_API}&text=Leon%20%20%20%20%20%20%20%20%20Made%20By%20Toxic%20Devil`, { responseType: 'arraybuffer' })
     } catch {
        await message.sendReply('*An Unknown Error in Loading Menu!*');
     }
