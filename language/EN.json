@@ -257,7 +257,7 @@
             "BIT_URL": "Shorten the long link with Bitly URL.",
             "CUTTLY_URL": "Shorten the long link with Cuttly URL.",
             "NEED_TEXT": "*You must enter some text to convert to font.*",
-            "MAX_TEXT": "*Entered text is too long!*\n```Maximum 30```",
+            "MAX_TEXT": "*Entered text is too long!*\n```Maximum 30 character```",
             "ERROR": "*An Unknown Error Occurred!*\n```Try Again Later!```"
         },
         "conventer": {
