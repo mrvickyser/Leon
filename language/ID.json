@@ -270,6 +270,8 @@
             "URL": "Persingkat tautan panjang dengan Tiny URL.",
             "BIT_URL": "Persingkat tautan panjang dengan Bitly URL.",
             "CUTTLY_URL": "Persingkat tautan panjang dengan Cuttly URL.",
+            "NEED_TEXT": "*Anda harus memasukkan beberapa teks untuk mengonversi ke font.*",
+            "MAX_TEXT": "*Teks yang dimasukkan terlalu panjang!*\n```Maksimum 30 karakter```",
             "ERROR": "*Terjadi kesalahan yang tidak diketahui!*\n```Coba lagi nanti!```"
         },
         "conventer": {
