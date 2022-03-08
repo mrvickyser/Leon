@@ -34,6 +34,7 @@ module.exports = {
     HANDLERS: process.env.HANDLERS === undefined ? '^[#!.]' : process.env.HANDLERS,
     SEND_READ: process.env.SEND_READ === undefined ? false : convertToBool(process.env.SEND_READ),
     BRANCH: 'master',
+    XTEAM_API: 'ab9942f95c09ca89',
     HEROKU: {
         HEROKU: process.env.HEROKU === undefined ? false : convertToBool(process.env.HEROKU),
         API_KEY: process.env.HEROKU_API_KEY === undefined ? '' : process.env.HEROKU_API_KEY,
