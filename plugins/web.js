@@ -13,7 +13,7 @@ if (Config.WORKTYPE == 'private') {
        var start = new Date().getTime();
        var end = new Date().getTime();
 
-       await message.sendReply('*Ping -* ```' + (end - start) + 'ms```\n\n');
+       await message.sendReply('```' + (end - start) + 'ms```');
     }));
 
     Bot.addCommand({pattern: 'short ?(.*)', fromMe: true, desc: Lang.URL}, (async (message, match) => {
@@ -27,6 +27,18 @@ if (Config.WORKTYPE == 'private') {
              await message.sendReply(`*Original Link:* ${match[1]}\n*Short Link:* ` + res);
          });
     }));
+
+    Bot.addCommand({pattern: 'fancy', fromMe: true, desc: Lang.FANCY_DESC}, (async (message, match) => {
+        if (match[1] === '') return await message.sendReply(Lang.NEED_TEXT);
+        if (match[1].length > 30) return await message.sendReply(Lang.MAX_TEXT);
+        try {
+          let url = await got(Config.API + '/fancy-text?text=' + encodeURI(match[1]));
+          let json = JSON.parse(url.body);
+          await message.sendReply("```" + json.result + "```");
+        } catch (e) {
+          await message.sendReply(Lang.ERROR);
+        }
+    }));
 }
 else if (Config.WORKTYPE == 'public') {
     
@@ -34,7 +46,7 @@ else if (Config.WORKTYPE == 'public') {
        var start = new Date().getTime();
        var end = new Date().getTime();
 
-       await message.sendReply('*Ping -* ```' + (end - start) + 'ms```\n\n');
+       await message.sendReply('```' + (end - start) + 'ms```');
     }));
 
     Bot.addCommand({pattern: 'short ?(.*)', fromMe: false, desc: Lang.URL}, (async (message, match) => {
@@ -47,5 +59,17 @@ else if (Config.WORKTYPE == 'public') {
 
              await message.sendReply(`*Original Link:* ${match[1]}\n*Short Link:* ` + res);
          });
+    }));
+
+    Bot.addCommand({pattern: 'fancy', fromMe: true, desc: Lang.FANCY_DESC}, (async (message, match) => {
+        if (match[1] === '') return await message.sendReply(Lang.NEED_TEXT);
+        if (match[1].length > 30) return await message.sendReply(Lang.MAX_TEXT);
+        try {
+          let url = await got(Config.API + '/fancy-text?text=' + encodeURI(match[1]));
+          let json = JSON.parse(url.body);
+          await message.sendReply("```" + json.result + "```");
+        } catch (e) {
+          await message.sendReply(Lang.ERROR);
+        }
     }));
 }
