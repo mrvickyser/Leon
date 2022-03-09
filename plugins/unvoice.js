@@ -13,6 +13,7 @@ if (Config.WORKTYPE == 'private') {
     Bot.addCommand({pattern: 'unvoice', fromMe: true, desc: Lang.UV_DESC}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendReply(Lang.UV_REPLY);
+        var downloading = await message.sendReply(Lang.UV_PROC);
         var location = await message.client.downloadAndSaveMediaMessage({
             key: {
                 remoteJid: message.reply_message.jid,
@@ -27,11 +28,13 @@ if (Config.WORKTYPE == 'private') {
             .on('end', async () => {
                 await message.sendAudio(fs.readFileSync('output.mp3'));
             });
+        return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
     
     Bot.addCommand({pattern: 'unaudio', fromMe: true, desc: Lang.UA_DESC}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendReply(Lang.UA_REPLY);
+        var downloading = await message.sendReply(Lang.UA_PROC);
         var location = await message.client.downloadAndSaveMediaMessage({
             key: {
                 remoteJid: message.reply_message.jid,
@@ -46,6 +49,7 @@ if (Config.WORKTYPE == 'private') {
             .on('end', async () => {
                 await message.sendAudio(fs.readFileSync('output.mp3'));
             });
+        return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
 }
 else if (Config.WORKTYPE == 'public') {
@@ -53,6 +57,7 @@ else if (Config.WORKTYPE == 'public') {
     Bot.addCommand({pattern: 'unvoice', fromMe: false, desc: Lang.UV_DESC}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendReply(Lang.UV_REPLY);
+        var downloading = await message.sendReply(Lang.UV_PROC);
         var location = await message.client.downloadAndSaveMediaMessage({
             key: {
                 remoteJid: message.reply_message.jid,
@@ -67,11 +72,13 @@ else if (Config.WORKTYPE == 'public') {
             .on('end', async () => {
                 await message.sendAudio(fs.readFileSync('output.mp3'));
             });
+        return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
     
     Bot.addCommand({pattern: 'unaudio', fromMe: false, desc: Lang.UA_DESC}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.sendReply(Lang.UA_REPLY);
+        var downloading = await message.sendReply(Lang.UA_PROC);
         var location = await message.client.downloadAndSaveMediaMessage({
             key: {
                 remoteJid: message.reply_message.jid,
@@ -86,5 +93,6 @@ else if (Config.WORKTYPE == 'public') {
             .on('end', async () => {
                 await message.sendAudio(fs.readFileSync('output.mp3'));
             });
+        return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
 }
