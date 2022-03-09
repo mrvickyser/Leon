@@ -41,7 +41,7 @@ if (Config.WORKTYPE == 'private') {
 		    fs.createWriteStream('rbg.png')
         );
     
-        await message.client.sendMessage(message.jid,fs.readFileSync('rbg.png'), MessageType.document, {filename: 'RemoveBG.png', mimetype: Mimetype.png {contextInfo: { forwardingScore: 49, isForwarded: true }, quoted: message.data });
+        await message.client.sendMessage(message.jid,fs.readFileSync('rbg.png'), MessageType.document, {filename: 'RemoveBG.png', mimetype: Mimetype.png, contextInfo: { forwardingScore: 49, isForwarded: true }, quoted: message.data });
     }));
 }
 else if (Config.WORKTYPE == 'public') {
@@ -75,6 +75,6 @@ else if (Config.WORKTYPE == 'public') {
 		    fs.createWriteStream('rbg.png')
         );
     
-        await message.client.sendMessage(message.jid,fs.readFileSync('rbg.png'), MessageType.document, {filename: 'RemoveBG.png', mimetype: Mimetype.png {contextInfo: { forwardingScore: 49, isForwarded: true }, quoted: message.data });
+        await message.client.sendMessage(message.jid,fs.readFileSync('rbg.png'), MessageType.document, {filename: 'RemoveBG.png', mimetype: Mimetype.png, contextInfo: { forwardingScore: 49, isForwarded: true }, quoted: message.data });
     }));
 }
