@@ -19,7 +19,7 @@ Bot.addCommand({pattern: 'truth ?(.*)', fromMe: t, desc: TD}, async (message, ma
 		if (response.statusCode === 200) {
                   var img = ["https://textpro.me/images/user_image/2022/03/62273769d4a13.jpg","https://textpro.me/images/user_image/2022/03/6227386833199.jpg","https://textpro.me/images/user_image/2022/03/62273c72cf61c.jpg","https://textpro.me/images/user_image/2022/03/62273dcf5298b.jpg","https://textpro.me/images/user_image/2022/03/62273e1d9615b.jpg"]
                   img = img[Math.floor(Math.random() * img.length)];
-                  await message.sendImage(img, json.result.truth + "*Powered by TOXIC DEVIL API*");
+                  await message.sendImage(img, json.result.truth + "\n\n*Powered by TOXIC DEVIL API*");
                 }
 	} catch {
 		return await message.sendReply(NOT_FOUND);
