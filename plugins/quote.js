@@ -17,7 +17,7 @@ Bot.addCommand({pattern: 'quote ?(.*)', fromMe: td, desc: QUOTE_DESC}, async (me
 	try {
 		const response = await got(url);
 		const json = JSON.parse(response.body);
-		if (response.statusCode === 200) return await message.client.sendReply('📌 ' + QUOTE +' *' + json.quote + '*\n\n' + '✒️' + AUTHOR +' *' + json.author+ '*\n');
+		if (response.statusCode === 200) return await message.client.sendReply('```📌 ' + QUOTE + '``` *' + json.quote + '*\n' + '```✒️ ' + AUTHOR + '``` *' + json.author+ '*');
 	} catch {
 		return await message.sendReply(NOT_FOUND);
 	}
