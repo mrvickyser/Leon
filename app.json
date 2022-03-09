@@ -3,7 +3,7 @@
     "description": "A simple WhatsApp bot.",
     "logo": "https://tinyurl.com/TOXIC-DEVIL-LOGO",
     "keywords": ["whatsapp", "Voice", "Leon", "Bot", "bot", "api", "ai"],
-    "repository": "https://github.com/TOXIC-DEVIL/Leon",
+    "repository": "https://github.com/mrvickyser/Leon",
     "website":   "https://api-toxic-devil.herokuapp.com/",
     "success_url": "https://api-toxic-devil.herokuapp.com/",
     "stack": "container",
